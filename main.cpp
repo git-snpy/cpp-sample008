@@ -19,37 +19,26 @@ using namespace std;
 struct Person {
     string name;
     int age;
+    
+    Person() {}
+    
+    Person(const string& newName, int newAge) {
+        name = newName;
+        age = newAge;
+    }
+    
 };
-
-Person f() {
-    Person masato;
-    masato.name = "Masato";
-    masato.age = 0;
-    return masato;
-}
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    //case1
-    Person taro;
-    taro.name = "Taro";
-    taro.age = 32;
+    Person people[5];
+    cout << end(people) - begin(people) << endl;
     
-    //case2
-    Person A(taro);
-    cout << A.name << endl;
+    Person taro("Taro", 32);
+    cout << taro.name << " (" << taro.age << ")\n";
     
-    //case3
-    Person B;
-    B = taro;
-    cout << B.name << endl;
-    
-    //case4
-    Person C(f());
-    cout << C.name << endl;
-
     return 0;
 }
 
