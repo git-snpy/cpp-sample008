@@ -16,28 +16,16 @@
 #include <string>
 using namespace std;
 
-struct Person {
-    string name;
-    int age;
-    
-    Person() {}
-    
-    Person(const string& newName, int newAge) {
-        name = newName;
-        age = newAge;
-    }
-    
+struct A {
+    int x;
+    A(int newX) : x(newX) { cout << "A(int newX) is called.\n"; };
 };
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    Person people[5];
-    cout << end(people) - begin(people) << endl;
-    
-    Person taro("Taro", 32);
-    cout << taro.name << " (" << taro.age << ")\n";
+    A a = 5;
     
     return 0;
 }
