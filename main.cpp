@@ -17,30 +17,27 @@
 #include <memory>
 using namespace std;
 
+
 struct Person {
     string name;
-    Person(const string& newName) : name(newName) {}
-    ~Person() {
-        cout << name << " has been destructed.\n";
+    int age;
+    void show() {
+        cout << name << " (" << age << ")\n";
     }
 };
+
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    Person a1("Taro");
-    Person* pA2 = new Person("Jiro");
-    Person* pA3 = new Person("Saburo");
-    auto pA4 = make_shared<Person>("Shiro");
+    Person taro { "Taro", 32 };
+    taro.show();
     
-    cout << a1.name << endl;
-    cout << pA2->name << endl;
-    cout << pA3->name << endl;
-    cout << pA4->name << endl;
+    Person* pHanako = new Person { "Hanako" , 27 };
+    pHanako->show();
+    delete pHanako;
     
-    delete pA2;
-    // delete pA3;
     return 0;
 }
 
