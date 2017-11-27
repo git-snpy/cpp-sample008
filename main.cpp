@@ -16,40 +16,17 @@
 #include <string>
 using namespace std;
 
-struct Person {
-    string name;
-    int age;
+struct A {
+    int x;
+    explicit A(int newX) : x(newX) { cout << "A(int newX) is called.\n"; };
 };
-
-Person f() {
-    Person masato;
-    masato.name = "Masato";
-    masato.age = 0;
-    return masato;
-}
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    //case1
-    Person taro;
-    taro.name = "Taro";
-    taro.age = 32;
+    A a = 5;
     
-    //case2
-    Person A(taro);
-    cout << A.name << endl;
-    
-    //case3
-    Person B;
-    B = taro;
-    cout << B.name << endl;
-    
-    //case4
-    Person C(f());
-    cout << C.name << endl;
-
     return 0;
 }
 
